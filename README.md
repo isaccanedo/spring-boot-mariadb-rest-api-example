@@ -13,12 +13,18 @@ Sex 21 de janeiro 09:32:02 BRT 2022 AVISO: Não é recomendado estabelecer uma c
 docker run --detach --name meu-mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 mysql:5.7
 ```
 
-### EXEC
+### Conectar ao shell bash interativo do contêiner com o seguinte comando:
 ```
-docker exec -it [container] bash
+docker exec -it [container] bash bash-4.2#
 ```
 ### MYSQL TERMINAL
 ```
-mysql -u root -p root
+bash-4.2# mysql -u root -p
+Enter password:
+```
+
+```
+mysql> update mysql.user set host = ‘%’ where user=’root’;
+Query OK, 1 row affected (0.02 sec)
 ```
 
